@@ -2,6 +2,7 @@ using Daily.Database;
 using Daily.Models;
 using Daily.Repositories.Implementations;
 using Daily.Repositories.Interfaces;
+using Daily.WebApi.Account;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Daily.WebApi
 {
@@ -25,11 +27,32 @@ namespace Daily.WebApi
         {
             string connectionString = Configuration.GetConnectionString("LocalDBConnection");
             services.AddDbContext<DailyDbContext>(options => options.UseSqlServer(connectionString));
-      
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
+                .AddJwtBearer(options =>
                 {
-                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                    // указывает, будет ли использоваться SSL при отправке токена
+                    options.RequireHttpsMetadata = true;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        // указывает, будет ли валидироваться издатель при валидации токена
+                        ValidateIssuer = true,
+                        // строка, представляющая издателя
+                        ValidIssuer = AuthOptions.ISSUER,
+
+                        // будет ли валидироваться потребитель токена
+                        ValidateAudience = true,
+                        // установка потребителя токена
+                        ValidAudience = AuthOptions.AUDIENCE,
+
+                        // будет ли валидироваться время существования
+                        ValidateLifetime = true,
+
+                        // будет ли валидироваться ключ безопасности
+                        ValidateIssuerSigningKey = true,
+                        // установка ключа безопасности
+                        IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+                    };
                 });
 
             services.AddTransient<IBaseRepository<User>, BaseRepository<User>>();
