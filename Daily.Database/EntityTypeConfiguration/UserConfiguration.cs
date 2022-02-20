@@ -4,13 +4,13 @@ using Daily.Models;
 
 namespace Daily.Database.EntityTypeConfiguration
 {
-    public class UserConfiguration : IEntityTypeConfiguration<User>
+    class UserConfiguration : IEntityTypeConfiguration<UserModel>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<UserModel> builder)
         {
             builder.HasKey(user => user.Id);
-            builder.Property(user => user.Login).HasMaxLength(50);
-            builder.Property(user => user.Password).HasMaxLength(50);
+            builder.Property(user => user.Username).HasMaxLength(50).IsRequired();
+            builder.Property(user => user.Password).HasMaxLength(50).IsRequired();
         }
     }
 }

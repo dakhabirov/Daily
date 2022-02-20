@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Daily.Database\Daily.Database.csproj" />
-    <ProjectReference Include="..\Daily.Models\Daily.Models.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.14" />
   </ItemGroup>
 
 </Project>

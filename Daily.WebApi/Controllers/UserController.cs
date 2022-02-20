@@ -2,9 +2,6 @@
 using Daily.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Daily.WebApi.Controllers
 {
@@ -12,9 +9,9 @@ namespace Daily.WebApi.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private IBaseRepository<User> Users { get; set; }
+        private IBaseRepository<UserModel> Users { get; set; }
 
-        public UserController(IBaseRepository<User> user)
+        public UserController(IBaseRepository<UserModel> user)
         {
             Users = user;
         }
@@ -32,7 +29,7 @@ namespace Daily.WebApi.Controllers
         }
 
         [HttpPost]
-        public JsonResult Post(User u)
+        public JsonResult Post(UserModel u)
         {
             bool success = true;
 
@@ -49,7 +46,7 @@ namespace Daily.WebApi.Controllers
         }
 
         [HttpPut]
-        public JsonResult Put(User u)
+        public JsonResult Put(UserModel u)
         {
             bool success = true;
             var user = Users.Get(u.Id);

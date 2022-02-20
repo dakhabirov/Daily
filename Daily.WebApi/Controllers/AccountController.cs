@@ -11,20 +11,23 @@ using System.Security.Claims;
 
 namespace Daily.WebApi.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class AccountController : Controller
     {
-        private IBaseRepository<User> Users { get; set; }
+        private IBaseRepository<UserModel> Users { get; set; }
 
-        public AccountController(IBaseRepository<User> user)
+        public AccountController(IBaseRepository<UserModel> user)
         {
             Users = user;
         }
 
-        [HttpPost("/token")]
-        public IActionResult Token(string username, string password)
+        [HttpPost]
+        [Route("generatetoken")]
+        public IActionResult GenerateToken(string username, string password)
         {
-            var identity = GetIdentity(username, password);
-            if (identity == null)
+            var identitedUser = GetIdentity(username, password);
+            if (identitedUser == null)
             {
                 return BadRequest(new { errorText = "Invalid username or password" });
             }
@@ -35,7 +38,7 @@ namespace Daily.WebApi.Controllers
                 issuer: AuthOptions.ISSUER,
                 audience: AuthOptions.AUDIENCE,
                 notBefore: now,
-                claims: identity.Claims,
+                claims: identitedUser.Claims,
                 expires: now.Add(TimeSpan.FromMinutes(AuthOptions.LIFETIME)),
                 signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
             var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
@@ -43,7 +46,7 @@ namespace Daily.WebApi.Controllers
             var response = new
             {
                 access_token = encodedJwt,
-                username = identity.Name
+                username = identitedUser.Name
             };
 
             return Json(response);
@@ -51,7 +54,7 @@ namespace Daily.WebApi.Controllers
 
         private ClaimsIdentity GetIdentity(string username, string password)
         {
-            User user = Users.GetAll().FirstOrDefault(u => u.Username == username && u.Password == password);
+            UserModel user = Users.GetAll().FirstOrDefault(u => u.Username == username && u.Password == password);
             if (user != null)
             {
                 var claims = new List<Claim>
@@ -59,6 +62,7 @@ namespace Daily.WebApi.Controllers
                     new Claim(ClaimsIdentity.DefaultNameClaimType, user.Username),
                     new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role)
                 };
+
                 ClaimsIdentity claimsIdentity =
                     new(claims, "Token", ClaimsIdentity.DefaultNameClaimType,
                         ClaimsIdentity.DefaultRoleClaimType);

@@ -6,8 +6,8 @@ namespace Daily.Models.Base
     {
         public Guid Id { get; set; }
 
-        public DateTime CreateDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public DateTime EditDate { get; set; }
+        public DateTime EditedDate { get; set; }
     }
 }

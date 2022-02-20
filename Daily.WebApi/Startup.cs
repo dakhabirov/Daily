@@ -55,7 +55,8 @@ namespace Daily.WebApi
                     };
                 });
 
-            services.AddTransient<IBaseRepository<User>, BaseRepository<User>>();
+            services.AddTransient<IBaseRepository<UserModel>, BaseRepository<UserModel>>();
+            services.AddTransient<IBaseRepository<RoleModel>, BaseRepository<RoleModel>>();
 
             services.AddControllers();
         }

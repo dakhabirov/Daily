@@ -1,9 +1,8 @@
 ﻿using Daily.Models.Base;
-using System;
 
 namespace Daily.Models
 {
-    public class User : BaseModel
+    public class UserModel : BaseModel
     {
         public string Username { get; set; }
 

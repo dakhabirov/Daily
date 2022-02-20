@@ -19,8 +19,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Daily.Database\Daily.Database.csproj" />
+    <ProjectReference Include="..\Daily.Identity\Daily.Identity.csproj" />
     <ProjectReference Include="..\Daily.Models\Daily.Models.csproj" />
-    <ProjectReference Include="..\Daily.Repositories\Daily.Repositories.csproj" />
+    <ProjectReference Include="..\Daily.Services\Daily.Services.csproj" />
   </ItemGroup>
 
 </Project>
