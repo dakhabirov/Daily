@@ -45,7 +45,7 @@ namespace Daily.WebApi.Controllers
 
             var response = new
             {
-                token = encodedJwt,
+                tokenKey = encodedJwt,
                 username = identitedUser.Name
             };
 

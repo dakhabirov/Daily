@@ -29,16 +29,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{A45AB26C-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{3115B528-1D34-47B8-BD16-6E3C8F9B5CD0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{D10229DA-37FE-453E-A4E6-F1ED4EF0A56D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{3141186A-F65D-4BF6-9338-4F4647456517}"
 	ProjectSection(SolutionItems) = preProject
 		wwwroot\html\account\login.html = wwwroot\html\account\login.html
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{3148D23F-AF5A-4AFD-B0CB-4DAC7D211C73}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{A86B742F-7C02-4E4F-91A8-12BD8F299614}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{ACF2E700-A62D-4E4C-9B4E-E5944258AC84}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\script\account\login.js = wwwroot\script\account\login.js
+		wwwroot\js\account\login.js = wwwroot\js\account\login.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "home", "home", "{81228C5F-2951-4C58-B5C8-62355B59E16A}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\js\home\index.js = wwwroot\js\home\index.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "home", "home", "{FCD68485-F9EB-4280-8509-17E06B83ADE4}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\html\home\index.html = wwwroot\html\home\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "general", "general", "{08681B4F-C8E4-46E5-8FD7-523393528E30}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\js\general\general.js = wwwroot\js\general\general.js
 	EndProjectSection
 EndProject
 Global
@@ -79,9 +94,12 @@ Global
 		{EE7219F7-2AF1-4F85-B9D1-F0261FE20E6B} = {FFFAD7F2-1BB6-4AC6-9161-08FCADDA29AF}
 		{A45AB26C-6E56-4D91-A11F-2A143D02630C} = {7D9529D8-FA3B-4FF0-8A16-5D8F73F58EE5}
 		{3115B528-1D34-47B8-BD16-6E3C8F9B5CD0} = {7D9529D8-FA3B-4FF0-8A16-5D8F73F58EE5}
-		{D10229DA-37FE-453E-A4E6-F1ED4EF0A56D} = {7D9529D8-FA3B-4FF0-8A16-5D8F73F58EE5}
 		{3141186A-F65D-4BF6-9338-4F4647456517} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
-		{3148D23F-AF5A-4AFD-B0CB-4DAC7D211C73} = {D10229DA-37FE-453E-A4E6-F1ED4EF0A56D}
+		{A86B742F-7C02-4E4F-91A8-12BD8F299614} = {7D9529D8-FA3B-4FF0-8A16-5D8F73F58EE5}
+		{ACF2E700-A62D-4E4C-9B4E-E5944258AC84} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
+		{81228C5F-2951-4C58-B5C8-62355B59E16A} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
+		{FCD68485-F9EB-4280-8509-17E06B83ADE4} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
+		{08681B4F-C8E4-46E5-8FD7-523393528E30} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97B1B630-C72F-49E1-BC6B-DA4E00B6150E}

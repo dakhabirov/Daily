@@ -70,12 +70,17 @@ namespace Daily.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             // подключаем CORS
-            app.UseCors(builder => builder.AllowAnyOrigin());
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseAuthentication();
             app.UseAuthorization();
