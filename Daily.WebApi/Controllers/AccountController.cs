@@ -24,7 +24,7 @@ namespace Daily.WebApi.Controllers
 
         [HttpPost]
         [Route("generatetoken")]
-        public IActionResult GenerateToken(string username, string password)
+        public IActionResult GenerateToken([FromForm]string username, [FromForm]string password)
         {
             var identitedUser = GetIdentity(username, password);
             if (identitedUser == null)
@@ -45,7 +45,7 @@ namespace Daily.WebApi.Controllers
 
             var response = new
             {
-                access_token = encodedJwt,
+                token = encodedJwt,
                 username = identitedUser.Name
             };
 

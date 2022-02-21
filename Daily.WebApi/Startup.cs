@@ -58,6 +58,8 @@ namespace Daily.WebApi
             services.AddTransient<IBaseRepository<UserModel>, BaseRepository<UserModel>>();
             services.AddTransient<IBaseRepository<RoleModel>, BaseRepository<RoleModel>>();
 
+            services.AddCors();
+
             services.AddControllers();
         }
 
@@ -71,6 +73,9 @@ namespace Daily.WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // подключаем CORS
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseAuthentication();
             app.UseAuthorization();
