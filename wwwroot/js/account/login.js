@@ -22,6 +22,7 @@ function Authorization(){
                     // если сервер вернул ошибку
                     if (!response.ok) {
                         console.log('Error: ', response.status, data.errorText);
+                        alert(data.errorText);
                     }
                     else {
                         // сохраняем в хранилище sessionStorage токен доступа
