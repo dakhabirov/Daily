@@ -9,13 +9,12 @@
         <div>
             <h3>Заметки</h3>
             <form name="noteForm">
-                    <label>Наименование</label><br />
-                    <input type="text" name="nameNote" /><br /> <br />
-                    <label>Содержание</label><br />
-                    <textarea type="text" name="contentNote"></textarea><br /> <br />
-                    <input type="submit" id="submitInsert" value="Добавить" />
-                    <input type="submit" id="submitDelete" value="Удалить" />
+                <label>Содержание</label><br />
+                <textarea type="text" name="contentNote"></textarea><br />
+                <input type="submit" id="submitCreate" value="Добавить" />
+                <input type="submit" id="submitDelete" value="Удалить" /><br /> <br />
             </form>
+            <ol id="list"></ol>
             <br /> <br />
             <button id="buttonExit">Выйти из учетной записи</button>
         </div>

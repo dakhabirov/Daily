@@ -9,7 +9,6 @@ namespace Daily.Database.EntityTypeConfiguration
         public void Configure(EntityTypeBuilder<NoteModel> builder)
         {
             builder.HasKey(note => note.Id);
-            builder.Property(note => note.Name).HasMaxLength(50);
         }
     }
 }
