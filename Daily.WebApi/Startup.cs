@@ -70,6 +70,9 @@ namespace Daily.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            DefaultFilesOptions defaultFilesOptions = new();
+            defaultFilesOptions.DefaultFileNames.Add("html/home/index.html");   // страница по умолчанию
+            app.UseDefaultFiles(defaultFilesOptions);
             app.UseStaticFiles();
 
             app.UseHttpsRedirection();

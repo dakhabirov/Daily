@@ -12,3 +12,8 @@ function checkToken() {
     else
         return true;
 }
+
+// удалить токен авторизации
+function deleteToken() {
+    sessionStorage.removeItem("tokenKey");
+}

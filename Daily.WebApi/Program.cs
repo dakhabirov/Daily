@@ -21,7 +21,7 @@ namespace Daily.WebApi
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseWebRoot("../wwwroot");    // путь к папке wwwroot
+                    webBuilder.UseWebRoot("../wwwroot");
                     webBuilder.UseStartup<Startup>();
                 });
     }
