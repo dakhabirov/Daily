@@ -1,12 +1,10 @@
 function Authorization(){
     var username = document.getElementById("usernameLogin").value;
     var password = document.getElementById("passwordLogin").value;
-    
-    setToken(username, password);
-    
+        
     // отправить запрос к серверу для получения токена
     function setToken(username, password) {
-
+        
         // формируем объект для отправки
         const formData = new FormData();
         formData.append("username", username);
@@ -17,20 +15,25 @@ function Authorization(){
             method: "POST",
             body: formData
         })
-        // получаем данные с сервера
         .then((response) => {
-            return response.json()
-        })
-        // возвращаем данные
-        .then((data) => {
-            console.log(data.tokenKey);
-            // сохраняем в хранилище sessionStorage токен доступа
-            sessionStorage.setItem("tokenKey", data.tokenKey);
-            redirect("https://localhost:44346/html/home/index.html");
-        })
-        .catch(error => console.error('Error:', error));
+            // получаем данные с сервера
+            response.json()
+                .then(data => {
+                    // если сервер вернул ошибку
+                    if (!response.ok) {
+                        console.log('Error: ', response.status, data.errorText);
+                    }
+                    else {
+                        // сохраняем в хранилище sessionStorage токен доступа
+                        sessionStorage.setItem("tokenKey", data.tokenKey);
+                        // перенаправляем на главную страницу
+                        redirect("https://localhost:44346/html/home/index.html");
+                    }
+                });
+        });
     };
 
+    setToken(username, password);
 }
 
 // добавляем обработчик события для кнопки
