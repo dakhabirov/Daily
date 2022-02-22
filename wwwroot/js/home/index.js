@@ -6,5 +6,6 @@ function exitAccount() {
     redirect("https://localhost:44346/html/account/login.html");
 }
 
-// добавляем обработчик события для кнопки
-document.getElementById("submitExit").addEventListener("click", exitAccount);
+document.getElementById("buttonNotes").addEventListener("click", () => redirect("https://localhost:44346/html/notes/index.html"));
+
+document.getElementById("buttonExit").addEventListener("click", exitAccount);

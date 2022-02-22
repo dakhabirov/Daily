@@ -1,3 +1,6 @@
+if (checkToken())
+    deleteToken();
+
 function Authorization(){
     var username = document.getElementById("usernameLogin").value;
     var password = document.getElementById("passwordLogin").value;
@@ -28,7 +31,7 @@ function Authorization(){
                         // сохраняем в хранилище sessionStorage токен доступа
                         sessionStorage.setItem("tokenKey", data.tokenKey);
                         // перенаправляем на главную страницу
-                        redirect("https://localhost:44346/html/home/index.html");
+                        redirect("https://localhost:44346");
                     }
                 });
         });
@@ -37,5 +40,4 @@ function Authorization(){
     setToken(username, password);
 }
 
-// добавляем обработчик события для кнопки
 document.getElementById("submitLogin").addEventListener("click", Authorization);

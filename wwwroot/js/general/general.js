@@ -1,6 +1,6 @@
 // перенаправить на страницу
 function redirect(url) {
-    window.location.replace(url);
+    window.location.href = url;
 }
 
 // проверить токен авторизации
