@@ -11,6 +11,7 @@ namespace Daily.Database.EntityTypeConfiguration
             builder.HasKey(user => user.Id);
             builder.Property(user => user.Username).HasMaxLength(50).IsRequired();
             builder.Property(user => user.Password).HasMaxLength(50).IsRequired();
+            builder.Property(user => user.Role).HasMaxLength(50).IsRequired();
         }
     }
 }

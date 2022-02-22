@@ -2,8 +2,10 @@
 
 namespace Daily.Models
 {
-    public class RoleModel : BaseModel
+    public class NoteModel : BaseModel
     {
         public string Name { get; set; }
+
+        public string Content { get; set; }
     }
 }

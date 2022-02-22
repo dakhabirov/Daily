@@ -61,6 +61,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{50051AB4
 		wwwroot\html\notes\index.html = wwwroot\html\notes\index.html
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{5575A161-2F9B-4E31-90EB-51243E86BA35}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\js\notes\notes.js = wwwroot\js\notes\notes.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +111,7 @@ Global
 		{FCD68485-F9EB-4280-8509-17E06B83ADE4} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
 		{08681B4F-C8E4-46E5-8FD7-523393528E30} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
 		{50051AB4-EA40-4B1D-8814-9A27AA98C186} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
+		{5575A161-2F9B-4E31-90EB-51243E86BA35} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97B1B630-C72F-49E1-BC6B-DA4E00B6150E}

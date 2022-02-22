@@ -8,18 +8,15 @@ namespace Daily.Database
     {
         public DbSet<UserModel> Users { get; set; }
 
-        public DbSet<RoleModel> Roles { get; set; }
+        public DbSet<NoteModel> Notes { get; set; }
 
         public DailyDbContext(DbContextOptions<DailyDbContext> options)
-            : base(options)
-        {
-            Database.EnsureCreated();
-        }
+            : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());
-            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new NoteConfiguration());
         }
     }
 }

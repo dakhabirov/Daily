@@ -17,3 +17,8 @@ function checkToken() {
 function deleteToken() {
     sessionStorage.removeItem("tokenKey");
 }
+
+function exitAccount() {
+    deleteToken();
+    redirect("https://localhost:44346/html/account/login.html");
+}
