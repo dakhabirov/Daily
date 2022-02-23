@@ -1,4 +1,5 @@
 ﻿using Daily.Models.Base;
+using System.Collections.Generic;
 
 namespace Daily.Models
 {
@@ -9,5 +10,7 @@ namespace Daily.Models
         public string Password { get; set; }
 
         public string Role { get; set; }
+
+        public ICollection<NoteModel> Notes { get; set; }
     }
 }
