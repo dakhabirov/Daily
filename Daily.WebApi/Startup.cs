@@ -3,7 +3,7 @@ using Daily.Models;
 using Daily.Repositories.Implementations;
 using Daily.Repositories.Interfaces;
 using Daily.WebApi.Account;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +28,7 @@ namespace Daily.WebApi
             string connectionString = Configuration.GetConnectionString("LocalDBConnection");
             services.AddDbContext<DailyDbContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
                     // указывает, будет ли использоваться SSL при отправке токена

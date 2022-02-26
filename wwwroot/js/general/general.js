@@ -13,6 +13,11 @@ function checkToken() {
         return true;
 }
 
+// получить токен авторизации
+function getToken() {
+    return sessionStorage.getItem("tokenKey");
+}
+
 // удалить токен авторизации
 function deleteToken() {
     sessionStorage.removeItem("tokenKey");
