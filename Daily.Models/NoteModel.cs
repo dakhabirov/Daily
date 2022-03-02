@@ -9,6 +9,6 @@ namespace Daily.Models
 
         public Guid UserId { get; set; }
 
-        public UserModel User { get; set; }
+        public virtual UserModel User { get; set; }
     }
 }

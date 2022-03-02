@@ -11,6 +11,6 @@ namespace Daily.Models
 
         public string Role { get; set; }
 
-        public ICollection<NoteModel> Notes { get; set; }
+        public virtual ICollection<NoteModel> Notes { get; set; }
     }
 }
