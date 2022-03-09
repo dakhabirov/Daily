@@ -6,7 +6,7 @@ function getNotes() {
     const token = getToken();
 
     // отправляем запрос на сервер
-    fetch("https://localhost:44346/api/note", {
+    fetch("https://localhost:44346/api/notes", {
         method: "GET",
         headers: {
             "Authorization": "Bearer " + token  // передаем токен доступа в заголовке
@@ -43,7 +43,7 @@ function createNote() {
     const formData = new FormData();
     formData.append("Content", content);
 
-    fetch("https://localhost:44346/api/note", {
+    fetch("https://localhost:44346/api/notes", {
         method: "POST",
         body: formData
     })

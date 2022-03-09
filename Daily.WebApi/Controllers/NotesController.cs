@@ -9,11 +9,11 @@ namespace Daily.WebApi.Controllers
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class NoteController : ControllerBase
+    public class NotesController : ControllerBase
     {
         private IBaseRepository<NoteModel> Notes { get; set; }
 
-        public NoteController(IBaseRepository<NoteModel> note)
+        public NotesController(IBaseRepository<NoteModel> note)
         {
             Notes = note;
         }
