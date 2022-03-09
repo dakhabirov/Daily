@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Daily.Database\Daily.Database.csproj" />
+    <ProjectReference Include="..\Daily.Identity\Daily.Identity.csproj" />
     <ProjectReference Include="..\Daily.Models\Daily.Models.csproj" />
   </ItemGroup>
 

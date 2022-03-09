@@ -2,10 +2,13 @@ using Daily.Database;
 using Daily.Models;
 using Daily.Repositories.Implementations;
 using Daily.Repositories.Interfaces;
+using Daily.Services.Implementations;
+using Daily.Services.Interfaces;
 using Daily.WebApi.Account;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -55,6 +58,7 @@ namespace Daily.WebApi
                     };
                 });
 
+            services.AddTransient<ITokenService, TokenService>();
             services.AddTransient<IBaseRepository<UserModel>, BaseRepository<UserModel>>();
             services.AddTransient<IBaseRepository<NoteModel>, BaseRepository<NoteModel>>();
 
