@@ -7,11 +7,11 @@ namespace Daily.WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private IBaseRepository<UserModel> Users { get; set; }
 
-        public UserController(IBaseRepository<UserModel> user)
+        public UsersController(IBaseRepository<UserModel> user)
         {
             Users = user;
         }
