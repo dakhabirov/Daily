@@ -19,10 +19,10 @@ function getNotes() {
                 .then(data => {
                     if (response.ok) {
                         var ol = document.getElementById("list");
-                        data.forEach(note => {
+                        data.forEach(noteContent => {
                             var li = document.createElement("li");
                             // добавляем полученные элементы в список
-                            li.appendChild(document.createTextNode(note.content));
+                            li.appendChild(document.createTextNode(noteContent));
                             ol.appendChild(li);
                         });
                     }

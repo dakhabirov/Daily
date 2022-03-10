@@ -3,6 +3,8 @@ using Daily.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Daily.WebApi.Controllers
 {
@@ -11,10 +13,13 @@ namespace Daily.WebApi.Controllers
     [Route("api/[controller]")]
     public class NotesController : ControllerBase
     {
+        private IBaseRepository<UserModel> Users { get; set; }
+
         private IBaseRepository<NoteModel> Notes { get; set; }
 
-        public NotesController(IBaseRepository<NoteModel> note)
+        public NotesController(IBaseRepository<NoteModel> note, IBaseRepository<UserModel> user)
         {
+            Users = user;
             Notes = note;
         }
 
@@ -27,7 +32,15 @@ namespace Daily.WebApi.Controllers
         [HttpGet]
         public JsonResult GetAll()
         {
-            return new JsonResult(Notes.GetAll());
+            var currentUser = Users.GetAll().FirstOrDefault(u => u.Username == HttpContext.User.Identity.Name);
+            
+            var notesContent = new List<string>();
+            foreach(var note in currentUser.Notes)
+            {
+                notesContent.Add(note.Content);
+            }
+
+            return new JsonResult(notesContent);
         }
 
         [HttpPost]
