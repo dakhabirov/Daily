@@ -47,9 +47,11 @@ namespace Daily.WebApi.Controllers
         public JsonResult Post(NoteModel note)
         {
             bool success = true;
+            var currentUser = Users.GetAll().FirstOrDefault(u => u.Username == HttpContext.User.Identity.Name);
 
             try
             {
+                note.UserId = currentUser.Id;
                 Notes.Create(note);
             }
             catch (Exception)

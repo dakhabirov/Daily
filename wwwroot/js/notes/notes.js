@@ -1,10 +1,10 @@
 if (!checkToken())
     redirect("https://localhost:44346/html/account/login.html");
 
+const token = getToken();
+
 // получить все заметки
 function getNotes() {
-    const token = getToken();
-
     // отправляем запрос на сервер
     fetch("https://localhost:44346/api/notes", {
         method: "GET",
@@ -39,16 +39,16 @@ function getNotes() {
 
 function createNote() {
     var content = document.getElementById("contentNote").value;
-    
-    const formData = new FormData();
-    formData.append("Content", content);
 
     fetch("https://localhost:44346/api/notes", {
         method: "POST",
-        body: formData
-    })
-    .then((response) => {
-        alert(response);
+        headers: {
+            "Authorization": "Bearer " + token,  // передаем токен доступа в заголовке
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            content: content
+        })
     });
 }
 
