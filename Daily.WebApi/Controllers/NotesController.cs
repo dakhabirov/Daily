@@ -33,14 +33,22 @@ namespace Daily.WebApi.Controllers
         public JsonResult GetAll()
         {
             var currentUser = Users.GetAll().FirstOrDefault(u => u.Username == HttpContext.User.Identity.Name);
-            
+
+            var notesId = new List<Guid>();
             var notesContent = new List<string>();
             foreach(var note in currentUser.Notes)
             {
+                notesId.Add(note.Id);
                 notesContent.Add(note.Content);
             }
 
-            return new JsonResult(notesContent);
+            var response = new
+            {
+                notesContent,
+                notesId
+            };
+
+            return new JsonResult(response);
         }
 
         [HttpPost]
