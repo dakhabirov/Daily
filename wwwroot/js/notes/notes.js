@@ -1,12 +1,12 @@
 if (!checkToken())
-    redirect("https://localhost:44346/html/account/login.html");
+    redirect("/html/account/login.html");
 
 const token = getToken();
 
 // получить все заметки
 function getNotes() {
     // отправляем запрос на сервер
-    fetch("https://localhost:44346/api/notes", {
+    fetch("/api/notes", {
         method: "GET",
         headers: {
             "Authorization": "Bearer " + token  // передаем токен доступа в заголовке
@@ -49,7 +49,7 @@ function getNotes() {
 function createNote() {
     let content = document.getElementById("contentNote").value;
 
-    fetch("https://localhost:44346/api/notes", {
+    fetch("/api/notes", {
         method: "POST",
         headers: {
             "Authorization": "Bearer " + token,
@@ -62,7 +62,7 @@ function createNote() {
 }
 
 function deleteNote(noteId) {
-    fetch("https://localhost:44346/api/notes?id=" + noteId, {
+    fetch("/api/notes?id=" + noteId, {
         method: "DELETE",
         headers: {
             "Authorization": "Bearer " + token,

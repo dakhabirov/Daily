@@ -11,7 +11,7 @@ function Login() {
     formData.append("password", password);
 
     // отправляем запрос на сервер
-    fetch("https://localhost:44346/api/account/buildtoken", {
+    fetch("/api/account/buildtoken", {
         method: "POST",
         body: formData
     })
@@ -24,7 +24,7 @@ function Login() {
                     // сохраняем в хранилище sessionStorage токен доступа
                     sessionStorage.setItem("tokenKey", data);
                     // перенаправляем на главную страницу
-                    redirect("https://localhost:44346");
+                    redirect("/");
                 }
             });
     });

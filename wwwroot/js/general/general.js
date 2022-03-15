@@ -1,6 +1,6 @@
 // перенаправить на страницу
 function redirect(url) {
-    window.location.href = url;
+    location.href = url;
 }
 
 // проверить токен авторизации
@@ -25,5 +25,5 @@ function deleteToken() {
 
 function exitAccount() {
     deleteToken();
-    redirect("https://localhost:44346/html/account/login.html");
+    redirect("/html/account/login.html");
 }
