@@ -3,6 +3,30 @@ if (!checkToken())
 
 const token = getToken();
 
+function buildNotesList(notesContent, notesId) {
+    if (notesContent.length >= 1 && notesId.length >= 1 && notesContent.length == notesId.length)
+    {
+        let ol = document.getElementById("list");
+        ol.innerHTML = "";
+
+        for (let i = 0; i < notesContent.length; i++)
+        {
+            let li = document.createElement("li");
+            // добавляем текст заметки
+            li.appendChild(document.createTextNode(notesContent[i]));
+            ol.appendChild(li);
+            // добавляем кнопку удаления
+            let submitDelete = document.createElement("input");
+            submitDelete.type = "submit";
+            submitDelete.value = "Удалить";
+            submitDelete.addEventListener("click", () => {
+                deleteNote(notesId[i]);
+            });
+            ol.appendChild(submitDelete);
+        }
+    }
+}
+
 // получить все заметки
 function getNotes() {
     // отправляем запрос на сервер
@@ -18,25 +42,10 @@ function getNotes() {
             response.json()
                 .then(data => {
                     if (response.ok) {
-                        let ol = document.getElementById("list");
-
-                        // добавляем полученные элементы в список
-                        for (let i = 0; i < data.notesContent.length; i++)
-                        {
-                            let li = document.createElement("li");
-                            // добавляем текст заметки
-                            li.appendChild(document.createTextNode(data.notesContent[i]));
-                            ol.appendChild(li);
-                            // добавляем кнопку удаления
-                            let submitDelete = document.createElement("input");
-                            submitDelete.type = "submit";
-                            submitDelete.value = "Удалить";
-                            submitDelete.addEventListener("click", () => { deleteNote(data.notesId[i]) });
-                            ol.appendChild(submitDelete);
-                        }
+                        buildNotesList(data.notesContent, data.notesId);
                     }
                     else {
-                        console.log('Error: ', response.status, data.errorText);    // если сервер вернул ошибку
+                        console.log("Error: ", response.status, data.errorText);    // если сервер вернул ошибку
                         alert(data.errorText);
                     }
                 });
@@ -58,6 +67,13 @@ function createNote() {
         body: JSON.stringify({
             content: content
         })
+    })
+    .then((response) => {
+        if (response.ok) {
+            getNotes();
+            // очищаем текст ареа
+            document.getElementById("contentNote").value = "";
+        }
     });
 }
 
@@ -67,10 +83,20 @@ function deleteNote(noteId) {
         headers: {
             "Authorization": "Bearer " + token,
         }
+    })
+    .then((response) => {
+        if (response.ok) {
+            getNotes();
+        }
     });
 }
 
 getNotes();
 
-document.getElementById("submitCreate").addEventListener("click", createNote);
-document.getElementById("buttonExit").addEventListener("click", () => exitAccount());
+document.getElementById("submitCreate").addEventListener("click", (e) => {
+    e.preventDefault();
+    createNote();
+});
+document.getElementById("buttonExit").addEventListener("click", () => {
+    exitAccount()
+});
