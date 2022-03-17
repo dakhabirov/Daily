@@ -41,16 +41,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{ACF2
 		wwwroot\js\account\login.js = wwwroot\js\account\login.js
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "home", "home", "{81228C5F-2951-4C58-B5C8-62355B59E16A}"
-	ProjectSection(SolutionItems) = preProject
-		wwwroot\js\home\index.js = wwwroot\js\home\index.js
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "home", "home", "{FCD68485-F9EB-4280-8509-17E06B83ADE4}"
-	ProjectSection(SolutionItems) = preProject
-		wwwroot\html\home\index.html = wwwroot\html\home\index.html
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "general", "general", "{08681B4F-C8E4-46E5-8FD7-523393528E30}"
 	ProjectSection(SolutionItems) = preProject
 		wwwroot\js\general\general.js = wwwroot\js\general\general.js
@@ -58,12 +48,42 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "general", "general", "{0868
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{50051AB4-EA40-4B1D-8814-9A27AA98C186}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\html\notes\index.html = wwwroot\html\notes\index.html
+		wwwroot\html\notes\notes.html = wwwroot\html\notes\notes.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{5575A161-2F9B-4E31-90EB-51243E86BA35}"
 	ProjectSection(SolutionItems) = preProject
 		wwwroot\js\notes\notes.js = wwwroot\js\notes\notes.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{7E89A852-8230-43F8-848B-1453D26C1082}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\css\main\main.css = wwwroot\css\main\main.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "training", "training", "{7DC79761-2987-4F77-927C-50BF1C6B0837}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\css\training\training.css = wwwroot\css\training\training.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "training", "training", "{D6B1DC14-7586-42D3-BA37-598F02F390CE}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\html\training\training.html = wwwroot\html\training\training.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{F7BBD201-F9F3-4997-8A3F-B7BC18B8850B}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\html\main\main.html = wwwroot\html\main\main.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{EDEF973B-59C5-45F5-8C8E-1A234D54DB4F}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\js\main\main.js = wwwroot\js\main\main.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "training", "training", "{CEFECD61-EADC-4E23-98DF-793C93EE3C9F}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\js\training\training.js = wwwroot\js\training\training.js
 	EndProjectSection
 EndProject
 Global
@@ -107,11 +127,15 @@ Global
 		{3141186A-F65D-4BF6-9338-4F4647456517} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
 		{A86B742F-7C02-4E4F-91A8-12BD8F299614} = {7D9529D8-FA3B-4FF0-8A16-5D8F73F58EE5}
 		{ACF2E700-A62D-4E4C-9B4E-E5944258AC84} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
-		{81228C5F-2951-4C58-B5C8-62355B59E16A} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
-		{FCD68485-F9EB-4280-8509-17E06B83ADE4} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
 		{08681B4F-C8E4-46E5-8FD7-523393528E30} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
 		{50051AB4-EA40-4B1D-8814-9A27AA98C186} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
 		{5575A161-2F9B-4E31-90EB-51243E86BA35} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
+		{7E89A852-8230-43F8-848B-1453D26C1082} = {3115B528-1D34-47B8-BD16-6E3C8F9B5CD0}
+		{7DC79761-2987-4F77-927C-50BF1C6B0837} = {3115B528-1D34-47B8-BD16-6E3C8F9B5CD0}
+		{D6B1DC14-7586-42D3-BA37-598F02F390CE} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
+		{F7BBD201-F9F3-4997-8A3F-B7BC18B8850B} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
+		{EDEF973B-59C5-45F5-8C8E-1A234D54DB4F} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
+		{CEFECD61-EADC-4E23-98DF-793C93EE3C9F} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97B1B630-C72F-49E1-BC6B-DA4E00B6150E}
