@@ -22,9 +22,3 @@ function getToken() {
 function deleteToken() {
     sessionStorage.removeItem("tokenKey");
 }
-
-// выйти из аккаунта
-function exitAccount() {
-    deleteToken();
-    redirect("/html/account/login.html");
-}

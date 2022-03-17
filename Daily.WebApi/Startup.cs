@@ -74,7 +74,7 @@ namespace Daily.WebApi
             }
 
             DefaultFilesOptions defaultFilesOptions = new();
-            defaultFilesOptions.DefaultFileNames.Add("html/home/index.html");   // страница по умолчанию
+            defaultFilesOptions.DefaultFileNames.Add("html/main/main.html");   // страница по умолчанию
             app.UseDefaultFiles(defaultFilesOptions);
             app.UseStaticFiles();
 
