@@ -23,67 +23,100 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{FF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Daily.Identity", "Daily.Identity\Daily.Identity.csproj", "{EE7219F7-2AF1-4F85-B9D1-F0261FE20E6B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wwwroot", "wwwroot", "{7D9529D8-FA3B-4FF0-8A16-5D8F73F58EE5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wwwroot", "wwwroot", "{28483008-43CD-4F52-B840-7C87F1B7CC69}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{A45AB26C-6E56-4D91-A11F-2A143D02630C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{E182D42F-2360-4192-B39D-8C8B65D12F10}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\css\index.css = wwwroot\css\index.css
+	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{3115B528-1D34-47B8-BD16-6E3C8F9B5CD0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{A736E0A6-C9BF-4C44-BE06-1DF6D22C32D2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{3141186A-F65D-4BF6-9338-4F4647456517}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{5C87F902-513E-4551-BFBF-3EC3AD0866F6}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\js\index.js = wwwroot\js\index.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{4C4AD72D-3A2C-42DE-B780-50025DD42CC5}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\css\main\index.css = wwwroot\css\main\index.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "training", "training", "{3FD6D4EB-FB61-4C0A-8801-0F8835660FDF}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\css\training\index.css = wwwroot\css\training\index.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{CA16FFCC-A304-4225-A699-07B553D2848A}"
 	ProjectSection(SolutionItems) = preProject
 		wwwroot\html\account\login.html = wwwroot\html\account\login.html
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{A86B742F-7C02-4E4F-91A8-12BD8F299614}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{F3C14288-4260-4AF5-9E80-983A0BBDC663}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\html\main\index.html = wwwroot\html\main\index.html
+	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{ACF2E700-A62D-4E4C-9B4E-E5944258AC84}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{910FD0F5-95C8-48DF-A58A-84D684F552EC}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\html\notes\index.html = wwwroot\html\notes\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "training", "training", "{95205167-DBB8-4410-8046-8EA00A24FF34}"
+	ProjectSection(SolutionItems) = preProject
+		wwwroot\html\training\index.html = wwwroot\html\training\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{D77C2141-0721-4195-8894-B0D35453726B}"
 	ProjectSection(SolutionItems) = preProject
 		wwwroot\js\account\login.js = wwwroot\js\account\login.js
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "general", "general", "{08681B4F-C8E4-46E5-8FD7-523393528E30}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{ED695514-2489-4B63-BE77-59E175708A2A}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\js\general\general.js = wwwroot\js\general\general.js
+		wwwroot\js\main\index.js = wwwroot\js\main\index.js
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{50051AB4-EA40-4B1D-8814-9A27AA98C186}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{F7D0991C-0187-403F-B0B5-3CE997E3D1F8}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\html\notes\notes.html = wwwroot\html\notes\notes.html
+		wwwroot\js\notes\index.js = wwwroot\js\notes\index.js
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{5575A161-2F9B-4E31-90EB-51243E86BA35}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "training", "training", "{385BB8F1-F707-4ED4-9237-E2F7B2D199B3}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\js\notes\notes.js = wwwroot\js\notes\notes.js
+		wwwroot\js\training\index.js = wwwroot\js\training\index.js
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{7E89A852-8230-43F8-848B-1453D26C1082}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "calendar", "calendar", "{E59888DA-AF2C-454A-A1EF-87CD45C4BE09}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\css\main\main.css = wwwroot\css\main\main.css
+		wwwroot\html\calendar\index.html = wwwroot\html\calendar\index.html
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "training", "training", "{7DC79761-2987-4F77-927C-50BF1C6B0837}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{0E2A3592-9763-46E6-ADD2-0288639EA110}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calendar", "Calendar", "{BA397573-59FB-46C8-AD66-CB9CC9DDCDA7}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\css\training\training.css = wwwroot\css\training\training.css
+		wwwroot\js\components\Calendar\index.js = wwwroot\js\components\Calendar\index.js
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "training", "training", "{D6B1DC14-7586-42D3-BA37-598F02F390CE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CalendarGrid", "CalendarGrid", "{A35E07B4-EDFF-4735-85DC-FEEED6BCB9AC}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\html\training\training.html = wwwroot\html\training\training.html
+		wwwroot\js\components\Calendar\CalendarGrid\index.js = wwwroot\js\components\Calendar\CalendarGrid\index.js
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{F7BBD201-F9F3-4997-8A3F-B7BC18B8850B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CalendarHeader", "CalendarHeader", "{61A3A8E8-4145-4603-B8DD-BD55A256EFEE}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\html\main\main.html = wwwroot\html\main\main.html
+		wwwroot\js\components\Calendar\Header\index.js = wwwroot\js\components\Calendar\Header\index.js
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{EDEF973B-59C5-45F5-8C8E-1A234D54DB4F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CalendarMonitor", "CalendarMonitor", "{C186F8F0-8662-4CCA-BC3A-DA6A10D88896}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\js\main\main.js = wwwroot\js\main\main.js
+		wwwroot\js\components\Calendar\Monitor\index.js = wwwroot\js\components\Calendar\Monitor\index.js
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "training", "training", "{CEFECD61-EADC-4E23-98DF-793C93EE3C9F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calendar", "Calendar", "{01153D75-0735-4E34-B4C6-20F229D8D0CE}"
 	ProjectSection(SolutionItems) = preProject
-		wwwroot\js\training\training.js = wwwroot\js\training\training.js
+		wwwroot\js\components\Calendar\Calendar\index.jsx = wwwroot\js\components\Calendar\Calendar\index.jsx
 	EndProjectSection
 EndProject
 Global
@@ -122,20 +155,26 @@ Global
 		{DE11003B-C0E8-41E2-8467-E350D33AC966} = {7FC3DD60-6D71-4A43-9F6B-2E6D0FE672F0}
 		{4AB0C586-0A42-423F-84E7-AA11FB8E55F8} = {7D320BD4-D10A-4915-BB80-3AE93CD5B9A8}
 		{EE7219F7-2AF1-4F85-B9D1-F0261FE20E6B} = {FFFAD7F2-1BB6-4AC6-9161-08FCADDA29AF}
-		{A45AB26C-6E56-4D91-A11F-2A143D02630C} = {7D9529D8-FA3B-4FF0-8A16-5D8F73F58EE5}
-		{3115B528-1D34-47B8-BD16-6E3C8F9B5CD0} = {7D9529D8-FA3B-4FF0-8A16-5D8F73F58EE5}
-		{3141186A-F65D-4BF6-9338-4F4647456517} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
-		{A86B742F-7C02-4E4F-91A8-12BD8F299614} = {7D9529D8-FA3B-4FF0-8A16-5D8F73F58EE5}
-		{ACF2E700-A62D-4E4C-9B4E-E5944258AC84} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
-		{08681B4F-C8E4-46E5-8FD7-523393528E30} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
-		{50051AB4-EA40-4B1D-8814-9A27AA98C186} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
-		{5575A161-2F9B-4E31-90EB-51243E86BA35} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
-		{7E89A852-8230-43F8-848B-1453D26C1082} = {3115B528-1D34-47B8-BD16-6E3C8F9B5CD0}
-		{7DC79761-2987-4F77-927C-50BF1C6B0837} = {3115B528-1D34-47B8-BD16-6E3C8F9B5CD0}
-		{D6B1DC14-7586-42D3-BA37-598F02F390CE} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
-		{F7BBD201-F9F3-4997-8A3F-B7BC18B8850B} = {A45AB26C-6E56-4D91-A11F-2A143D02630C}
-		{EDEF973B-59C5-45F5-8C8E-1A234D54DB4F} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
-		{CEFECD61-EADC-4E23-98DF-793C93EE3C9F} = {A86B742F-7C02-4E4F-91A8-12BD8F299614}
+		{E182D42F-2360-4192-B39D-8C8B65D12F10} = {28483008-43CD-4F52-B840-7C87F1B7CC69}
+		{A736E0A6-C9BF-4C44-BE06-1DF6D22C32D2} = {28483008-43CD-4F52-B840-7C87F1B7CC69}
+		{5C87F902-513E-4551-BFBF-3EC3AD0866F6} = {28483008-43CD-4F52-B840-7C87F1B7CC69}
+		{4C4AD72D-3A2C-42DE-B780-50025DD42CC5} = {E182D42F-2360-4192-B39D-8C8B65D12F10}
+		{3FD6D4EB-FB61-4C0A-8801-0F8835660FDF} = {E182D42F-2360-4192-B39D-8C8B65D12F10}
+		{CA16FFCC-A304-4225-A699-07B553D2848A} = {A736E0A6-C9BF-4C44-BE06-1DF6D22C32D2}
+		{F3C14288-4260-4AF5-9E80-983A0BBDC663} = {A736E0A6-C9BF-4C44-BE06-1DF6D22C32D2}
+		{910FD0F5-95C8-48DF-A58A-84D684F552EC} = {A736E0A6-C9BF-4C44-BE06-1DF6D22C32D2}
+		{95205167-DBB8-4410-8046-8EA00A24FF34} = {A736E0A6-C9BF-4C44-BE06-1DF6D22C32D2}
+		{D77C2141-0721-4195-8894-B0D35453726B} = {5C87F902-513E-4551-BFBF-3EC3AD0866F6}
+		{ED695514-2489-4B63-BE77-59E175708A2A} = {5C87F902-513E-4551-BFBF-3EC3AD0866F6}
+		{F7D0991C-0187-403F-B0B5-3CE997E3D1F8} = {5C87F902-513E-4551-BFBF-3EC3AD0866F6}
+		{385BB8F1-F707-4ED4-9237-E2F7B2D199B3} = {5C87F902-513E-4551-BFBF-3EC3AD0866F6}
+		{E59888DA-AF2C-454A-A1EF-87CD45C4BE09} = {A736E0A6-C9BF-4C44-BE06-1DF6D22C32D2}
+		{0E2A3592-9763-46E6-ADD2-0288639EA110} = {5C87F902-513E-4551-BFBF-3EC3AD0866F6}
+		{BA397573-59FB-46C8-AD66-CB9CC9DDCDA7} = {0E2A3592-9763-46E6-ADD2-0288639EA110}
+		{A35E07B4-EDFF-4735-85DC-FEEED6BCB9AC} = {BA397573-59FB-46C8-AD66-CB9CC9DDCDA7}
+		{61A3A8E8-4145-4603-B8DD-BD55A256EFEE} = {BA397573-59FB-46C8-AD66-CB9CC9DDCDA7}
+		{C186F8F0-8662-4CCA-BC3A-DA6A10D88896} = {BA397573-59FB-46C8-AD66-CB9CC9DDCDA7}
+		{01153D75-0735-4E34-B4C6-20F229D8D0CE} = {BA397573-59FB-46C8-AD66-CB9CC9DDCDA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97B1B630-C72F-49E1-BC6B-DA4E00B6150E}

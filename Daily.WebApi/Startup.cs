@@ -5,14 +5,18 @@ using Daily.Repositories.Interfaces;
 using Daily.Services.Implementations;
 using Daily.Services.Interfaces;
 using Daily.WebApi.Account;
+using JavaScriptEngineSwitcher.ChakraCore;
+using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using React.AspNet;
 
 namespace Daily.WebApi
 {
@@ -64,6 +68,11 @@ namespace Daily.WebApi
             services.AddCors();
 
             services.AddControllers();
+
+            services.AddMemoryCache();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddReact();
+            services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName).AddChakraCore();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -73,8 +82,11 @@ namespace Daily.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            // подключаем React
+            app.UseReact(config => { });
+
             DefaultFilesOptions defaultFilesOptions = new();
-            defaultFilesOptions.DefaultFileNames.Add("html/main/main.html");   // страница по умолчанию
+            defaultFilesOptions.DefaultFileNames.Add("html/main/index.html");   // страница по умолчанию
             app.UseDefaultFiles(defaultFilesOptions);
             app.UseStaticFiles();
 
