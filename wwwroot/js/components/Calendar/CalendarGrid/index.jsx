@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import moment from '/node_modules/moment/dist/moment.js'
 
-const GridWrapper = styled.div`
+const GridWrapper = window.styled.div`
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -8,19 +8,19 @@ const GridWrapper = styled.div`
     background-color: #404040;
 `;
 
-const CellWrapper = styled.div`
+const CellWrapper = window.styled.div`
     min-width: 140px;
     min-height: 80px;
     background-color: ${props => props.isWeekend ? '#272829' : '#1E1F21' };
     color: #DDDCDD;
 `;
 
-const RowInCell = styled.div`
+const RowInCell = window.styled.div`
     display: flex;
     justify-content: ${props => props.justifyContent ? props.justifyContent : 'flex-start'};
 `;
 
-const DayWrapper = styled.div`
+const DayWrapper = window.styled.div`
     height: 33px;
     width: 33px;
     display: flex;
@@ -28,9 +28,9 @@ const DayWrapper = styled.div`
     justify-content: center;
 `;
 
-const CalendarGrid = ({startDay}) => {
+function CalendarGrid(startDay) {
     const totalDays = 42;
-    const day = startDay.clone();
+    const day = moment(startDay).clone();
     const daysArray = [...Array(totalDays)].map(() => day.add(1, 'day').clone());
     return(
         <GridWrapper>
@@ -54,4 +54,4 @@ const CalendarGrid = ({startDay}) => {
     );
 }
 
-export { CalendarGrid }
+export default CalendarGrid
