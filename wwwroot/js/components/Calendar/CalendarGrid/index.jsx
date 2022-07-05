@@ -1,6 +1,6 @@
 import moment from '/node_modules/moment/dist/moment.js'
 
-const GridWrapper = window.styled.div`
+const GridWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -8,19 +8,19 @@ const GridWrapper = window.styled.div`
     background-color: #404040;
 `;
 
-const CellWrapper = window.styled.div`
+const CellWrapper = styled.div`
     min-width: 140px;
     min-height: 80px;
-    background-color: ${props => props.isWeekend ? '#272829' : '#1E1F21' };
+    background-color: ${props => props.isWeekend ? '#272829' : '#1E1F21'};
     color: #DDDCDD;
 `;
 
-const RowInCell = window.styled.div`
+const RowInCell = styled.div`
     display: flex;
     justify-content: ${props => props.justifyContent ? props.justifyContent : 'flex-start'};
 `;
 
-const DayWrapper = window.styled.div`
+const DayWrapper = styled.div`
     height: 33px;
     width: 33px;
     display: flex;
@@ -28,11 +28,11 @@ const DayWrapper = window.styled.div`
     justify-content: center;
 `;
 
-function CalendarGrid(startDay) {
+function CalendarGrid({startDay}) {
     const totalDays = 42;
     const day = moment(startDay).clone();
     const daysArray = [...Array(totalDays)].map(() => day.add(1, 'day').clone());
-    return(
+    return (
         <GridWrapper>
             {
                 daysArray.map((dayItem) => (
@@ -41,7 +41,7 @@ function CalendarGrid(startDay) {
                         isWeekend={dayItem.day() === 6 || dayItem.day() === 0}  // если сб или вс
                     >
                         <RowInCell
-                            justifyContent = {'flex-end'}
+                            justifyContent={'flex-end'}
                         >
                             <DayWrapper>
                                 {dayItem.format('D')}
